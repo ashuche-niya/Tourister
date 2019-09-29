@@ -27,13 +27,14 @@ public class containerActivity extends AppCompatActivity implements BottomNaviga
     public TabLayout tabLayout;
     public Toolbar toolbar;
     public Viewpageadapter adapter;
-    static String username,mobileno,email,teamname;
+    static String username,mobileno,email,teamname,location;
     group group;
     public ViewPager viewPager;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_container);
         Intent intent=getIntent();
+        location=intent.getStringExtra("userlocation");
 //        toolbar=findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
         BottomNavigationView bottomNavigationView =findViewById(R.id.navigation);

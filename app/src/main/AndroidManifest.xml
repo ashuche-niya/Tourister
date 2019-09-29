@@ -9,9 +9,10 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <uses-feature
         android:glEsVersion="0x00020000"
-        android:required="true"/>
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -20,16 +21,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".containerActivity"></activity>
+        <activity android:name=".ImagesActivity"></activity>
+        <activity android:name=".containerActivity" />
         <activity android:name=".Groupdetails" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".MobileNoActivity" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyA427Npjwpvu2RqTLWio12ZacbtOkGfDxY"/>
+            android:value="AIzaSyA427Npjwpvu2RqTLWio12ZacbtOkGfDxY" />
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

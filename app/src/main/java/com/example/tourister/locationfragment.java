@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -74,23 +75,45 @@ public class locationfragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
-        Marker m1 = googleMap.addMarker(new MarkerOptions()
-                .position(new LatLng(38.609556, -1.139637))
-                .anchor(0.5f, 0.5f)
-                .title("Title1")
-                .snippet("Snippet1"));
 
+//        Marker m1 = googleMap.addMarker(new MarkerOptions()
+//                .position(new LatLng(38.609556, -1.139637))
+//                .anchor(0.5f, 0.5f)
+//                .title("Title1")
+//                .snippet("Snippet1"));
+//        //.icon(BitmapDescriptorFactory.fromResource(R.drawable.logo1)));
+//
+//
+//        Marker m2 = googleMap.addMarker(new MarkerOptions()
+//                .position(new LatLng(40.4272414,-3.7020037))
+//                .anchor(0.5f, 0.5f)
+//                .title("Title2")
+//                .snippet("Snippet2"));
 
-        Marker m2 = googleMap.addMarker(new MarkerOptions()
-                .position(new LatLng(40.4272414,-3.7020037))
-                .anchor(0.5f, 0.5f)
-                .title("Title2")
-                .snippet("Snippet2"));
+        String srt[]=containerActivity.location.split(" ");
+       double  latitude=Double.parseDouble(srt[0]);
+        double  longitude=Double.parseDouble(srt[1]);
+        LatLng latLng = new LatLng(latitude, longitude);
+//        googleMap.addMarker(new MarkerOptions().position(latLng));
+//        googleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+//        googleMap.animateCamera(CameraUpdateFactory.zoomTo(15));
 
-        Marker m3 = googleMap.addMarker(new MarkerOptions()
-                .position(new LatLng(43.2568193,-2.9225534))
-                .anchor(0.5f, 0.5f)
-                .title("Title3")
-                .snippet("Snippet3"));
+        MarkerOptions markerOptions = new MarkerOptions();
+
+        // Setting the position for the marker
+        markerOptions.position(latLng);
+
+        // Setting the title for the marker.
+        // This will be displayed on taping the marker
+        markerOptions.title(latLng.latitude + " : " + latLng.longitude);
+
+        // Clears the previously touched position
+        googleMap.clear();
+
+        // Animating to the touched position
+        googleMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
+
+        // Placing a marker on the touched position
+        googleMap.addMarker(markerOptions);
     }
 }
