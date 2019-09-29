@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/location"
+        android:icon="@drawable/ic_location_on_black_24dp"
+        android:title="SpotUs">
+    </item>
+    <item
+        android:id="@+id/album"
+        android:icon="@drawable/ic_photo_album_black_24dp"
+        android:title="Album">
+    </item>
+    <item
+        android:id="@+id/chat"
+        android:icon="@drawable/ic_chat_black_24dp"
+        android:title="Chat">
+    </item>
+    <item
+        android:id="@+id/spitwise"
+        android:icon="@drawable/ic_attach_money_black_24dp"
+        android:title="settleup">
+    </item>
+</menu>

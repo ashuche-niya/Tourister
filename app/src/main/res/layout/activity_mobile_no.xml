@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MobileNoActivity">
+    <TextView
+        android:id="@+id/hiii"
+        android:textSize="30dp"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:text="Enter Mobile No"
+        android:layout_height="wrap_content"/>
+
+
+    <EditText
+        android:id="@+id/mobileno"
+        android:layout_width="match_parent"
+        android:hint="mobile no"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/hiii"
+        android:textSize="20dp"
+        android:layout_margin="8dp"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:layout_margin="16dp"
+        android:layout_below="@id/mobileno"
+        android:id="@+id/addmobilenobtn"
+        android:layout_width="match_parent"
+        android:text="Add Mobile No"
+        android:layout_height="wrap_content"/>
+
+
+</RelativeLayout>
